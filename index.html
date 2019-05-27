@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tsinghua-Berkeley Shenzhen institute (TBSI)</title>
-    <link rel="shortcut icon" type="image/x-icon" href="http://www.tbsi.edu.cn/en/Uploads/2017-11-15/5a0bbddc310ca.png">
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://www.tbsi.edu.cn/en/Uploads/2017-11-15/5a0bbddc310ca.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
-</head>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <body>
+    <div id="header">
+      <a href="http://www.tbsi.edu.cn/en" class="retina-logo">
+        <img
+          src="http://www.tbsi.edu.cn/en/Uploads/2017-11-15/5a0bbdc171bb7.png"
+          alt="Logo"
+      /></a>
 
-
-<body>
-    <div id="app" style="padding: 20px">
-        <el-row :gutter="32">
-            <el-col :lg="6" :xl="4" :md="8" :sm="12" :xs="24" v-for="(profile, index) in profiles" :key="index">
-                <div class="container">
-                    <h3>{{index+1}}. {{profile.name}}</h3>
-                    <el-image :src="profile.imgSrc"></el-image>
-                    <div>{{profile.degree}}</div>
-                    <div>{{profile.email}}</div>
-                    <div>{{profile.graduatedSchool}}</div>
-                    <div>{{profile.joinedTime}}</div>
-                </div>
-            </el-col>
-        </el-row>
+      <span>ea实验室成员介绍</span>
+    </div>
+    <div id="app">
+      <el-row :gutter="32">
+        <el-col
+          :lg="6"
+          :xl="4"
+          :md="8"
+          :sm="12"
+          :xs="24"
+          v-for="(profile, index) in profiles"
+          :key="index"
+        >
+          <div class="container">
+            <h3>{{ index + 1 }}. {{ profile.name }}</h3>
+            <el-image :src="profile.imgSrc"></el-image>
+            <div>{{ profile.degree }}</div>
+            <div>{{ profile.email }}</div>
+            <div>{{ profile.graduatedSchool }}</div>
+            <div>{{ profile.joinedTime }}</div>
+          </div>
+        </el-col>
+      </el-row>
     </div>
     <template id="profile">
-        <div class="container">
-            <h5>{{person.name}}</h5>
-            <el-image :src="person.imgSrc"></el-image>
-            <div>{{person.degree}}</div>
-            <div>{{person.email}}</div>
-            <div>{{person.graduatedSchool}}</div>
-            <div>{{person.joinedTime}}</div>
-        </div>
+      <div class="container">
+        <h5>{{ person.name }}</h5>
+        <el-image :src="person.imgSrc"></el-image>
+        <div>{{ person.degree }}</div>
+        <div>{{ person.email }}</div>
+        <div>{{ person.graduatedSchool }}</div>
+        <div>{{ person.joinedTime }}</div>
+      </div>
     </template>
-
-
-</body>
-<script src="./js/index.js"></script>
-
+    <div id="footer">
+      <div class="foot-bg-left hidden-sm hidden-xs">
+        <img src="./images/foot-bg-left.png" />
+      </div>
+      <div class="word">
+        <p>地址: 广东省深圳市南山区西丽大学城清华园区能源与环境大楼</p>
+        <p>联系电话: +86-0755-8672-6649 +86-0755-8696-4070</p>
+        <p>多价态离子能量存储实验室© 2019</p>
+      </div>
+      <div class="foot-bg-right hidden-sm hidden-xs">
+        <img src="./images/foot-bg-right.png" />
+      </div>
+    </div>
+  </body>
+  <script src="./js/index.js"></script>
 </html>
